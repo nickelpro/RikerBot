@@ -1,4 +1,4 @@
-choco python
+choco install python
 $Env:Path
 updatenv
 $Env:Path

@@ -1,6 +1,6 @@
 language: cpp
 
-matrix:
+jobs:
   include:
     - os: linux
       dist: focal
@@ -11,3 +11,11 @@ matrix:
         - pip install minecraft_data
       script:
         - "./scripts/linux-build.sh"
+    - os: win
+      before-install:
+        - choco install cmake ninja visualstudio2019buildtools python pip
+        - pip install minecraft_data
+        - "./scripts/win-before-install.sh"
+
+      script:
+        - "./scripts/win-build.sh"

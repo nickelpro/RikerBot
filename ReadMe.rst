@@ -38,7 +38,8 @@ Framework Nice-To-Haves (things to work on when features are done):
 Housekeeping (Good projects for new people!):
  * Spin mcd2cpp out into its own project
  * Default settings parser
- * CI builds and push to PyPI
+ * CI builds for more platforms
+ * Automatic PyPI and Github releases deployment
  * Docs, Docs, Docs, Docs, Docs!
 
 Usage

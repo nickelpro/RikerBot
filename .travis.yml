@@ -13,10 +13,12 @@ jobs:
         - "./scripts/linux-build.sh"
     - os: win
       before-install:
+        - powershell
         - choco install python
-        - source "scripts/refreshenv.sh"
-        - choco install pip cmake ninja visualstudio2019buildtools
-        - source "scripts/refreshenv.sh"
+        - refreshenv
+        - choco install pip
+        - choco install cmake ninja visualstudio2019buildtools
+        - refreshenv
         - "./scripts/win-before-install.sh"
 
       script:

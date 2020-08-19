@@ -11,8 +11,10 @@ jobs:
         - pip install minecraft_data
       script:
         - "./scripts/linux-build.sh"
+
     - os: win
       before-install:
+        - powershell -Command Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
         - powershell "scripts/win-before-install.ps1"
 
       script:

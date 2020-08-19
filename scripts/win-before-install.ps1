@@ -6,7 +6,7 @@ choco install python swig cmake ninja visualstudio2019buildtools
 refreshenv
 pip install wheel
 pip install conan
-conan install ./scripts -pr=./scripts/msvc_profile
+conan install ./scripts --profile ./scripts/msvc_profile
 
 # git clone https://github.com/microsoft/vcpkg.git
 # cd vcpkg

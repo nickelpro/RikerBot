@@ -8,4 +8,4 @@ pip install wheel
 pip install conan
 conan install ./scripts --profile ./scripts/msvc_profile
 
-cmake --version
+[Environment]::SetEnvironmentVariable("CUSTOM_PATH", $Env:Path, "User")

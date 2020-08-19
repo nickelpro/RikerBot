@@ -1,4 +1,4 @@
-choco install python pip swig cmake ninja visualstudio2019buildtools conan
+choco install python swig cmake ninja visualstudio2019buildtools conan
 refreshenv
 conan user
 conan install ./scripts

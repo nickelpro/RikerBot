@@ -4,13 +4,9 @@ if (Test-Path($ChocolateyProfile)) {
 }
 choco install python swig cmake ninja visualstudio2019buildtools
 refreshenv
-runas /noprofile /user:Administrator "pip install --upgrade pip"
 pip install wheel
 pip install conan
-conan profile new default --detect
-conan profile update settings.compiler="Visual Studio" default
-conan profile update settings.compiler.version=16 default
-conan install ./scripts
+conan install ./scripts -pr=./scripts/msvc_profile
 
 # git clone https://github.com/microsoft/vcpkg.git
 # cd vcpkg

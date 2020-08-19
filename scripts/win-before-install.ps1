@@ -1,4 +1,4 @@
-choco install python pip cmake ninja visualstudio2019buildtools
+choco install python pip swig cmake ninja visualstudio2019buildtools
 refreshenv
 
 git clone https://github.com/microsoft/vcpkg.git

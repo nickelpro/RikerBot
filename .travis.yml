@@ -18,4 +18,4 @@ jobs:
         - powershell "scripts/win-before-install.ps1"
 
       script:
-        - powershell "./scripts/win-build.ps1"
+        - powershell "scripts/win-build.ps1"

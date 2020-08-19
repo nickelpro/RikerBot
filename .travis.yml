@@ -13,9 +13,10 @@ jobs:
         - "./scripts/linux-build.sh"
     - os: win
       before-install:
-        - choco install python --pre
-        - choco install cmake ninja visualstudio2019buildtools
-        - pip install minecraft_data
+        - choco install python
+        - source "scripts/refreshenv.sh"
+        - choco install pip cmake ninja visualstudio2019buildtools
+        - source "scripts/refreshenv.sh"
         - "./scripts/win-before-install.sh"
 
       script:

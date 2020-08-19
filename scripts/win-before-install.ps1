@@ -1,6 +1,6 @@
 choco install python
 $Env:Path
-updatenv
+refreshenv
 $Env:Path
 pip install conan
 conan user

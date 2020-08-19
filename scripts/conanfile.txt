@@ -1,0 +1,7 @@
+[requires]
+boost/1.72
+botan/2.15.0
+zlib/1.2.11
+
+[generators]
+cmake

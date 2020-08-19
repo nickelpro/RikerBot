@@ -2,10 +2,9 @@ $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
-choco install python
-$Env:Path
+choco install python swig cmake ninja visualstudio2019buildtools
 refreshenv
-$Env:Path
+pip install pip wheel
 pip install conan
 conan user
 conan install ./scripts

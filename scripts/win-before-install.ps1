@@ -7,5 +7,3 @@ refreshenv
 pip install wheel
 pip install conan
 conan install ./scripts --profile ./scripts/msvc_profile
-
-[Environment]::SetEnvironmentVariable("CUSTOM_PATH", $Env:Path, "User")

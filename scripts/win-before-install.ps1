@@ -9,3 +9,4 @@ refreshenv
 pip install wheel
 pip install conan
 conan install ./scripts --profile ./scripts/msvc_profile
+type ./conan_paths.cmake

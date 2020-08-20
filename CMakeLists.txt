@@ -4,7 +4,7 @@ project(RikerBot CXX)
 set(MC_VERSION "1.16.2" CACHE STRING "Minecraft version to target")
 STRING(REGEX REPLACE [\.] _ MC_USCORE ${MC_VERSION})
 
-
+set(Boost_USE_STATIC_LIBS ON)
 find_package(Boost COMPONENTS log REQUIRED)
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 

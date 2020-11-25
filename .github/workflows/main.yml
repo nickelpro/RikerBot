@@ -9,10 +9,21 @@ jobs:
       - name: Clone
         uses: actions/checkout@v1
       - run: pip install minecraft-data
-      - run: sudo apt-get install ninja-build libboost1.71-all-dev libbotan-2-dev
-      - run: cmake . -G Ninja
+      - run: sudo apt-get install ninja-build libbotan-2-dev
+      - run: cmake . -G Ninja -DBOOST_ROOT=${BOOST_ROOT_1_72_0}
         env:
           CC: gcc-10
           CXX: g++-10
+      - run: cmake --build . --target rikerbot_all
+      - run: python setup.py bdist_wheel
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Clone
+        uses: actions/checkout@v1
+      - run: pip install minecraft-data
+      - run: vcpkg install botan:x64-windows-static
+      - run: cmake . -DBOOST_ROOT=${BOOST_ROOT_1_72_0}
       - run: cmake --build . --target rikerbot_all
       - run: python setup.py bdist_wheel

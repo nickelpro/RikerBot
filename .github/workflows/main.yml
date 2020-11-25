@@ -12,4 +12,4 @@ jobs:
       - run: sudo apt-get install ninja-build libboost1.71-all-dev libbotan-2-dev
       - run: cmake . -G Ninja
       - run: cmake --build . --target rikerbot_all
-      - run: python setup.py bdist_whell
+      - run: python setup.py bdist_wheel

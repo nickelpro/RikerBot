@@ -5,7 +5,7 @@ set(MC_VERSION "1.16.4" CACHE STRING "Minecraft version to target")
 STRING(REGEX REPLACE [\.] _ MC_USCORE ${MC_VERSION})
 
 
-find_path(BOTAN botan/botan.h PATH_SUFFIXES botan-2 REQUIRED)
+#find_path(BOTAN botan/botan.h PATH_SUFFIXES botan-2 REQUIRED)
 find_library(LIBBOTAN botan-2 REQUIRED)
 
 find_package(Boost COMPONENTS log REQUIRED)

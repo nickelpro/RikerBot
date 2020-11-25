@@ -23,7 +23,7 @@ jobs:
       - name: Clone
         uses: actions/checkout@v1
       - run: pip install minecraft-data
-      - run: vcpkg install botan:x64-windows-static
-      - run: cmake . -DBOOST_ROOT=${BOOST_ROOT_1_72_0} -DBoost_INCLUDE_DIR=${BOOST_ROOT_1_72_0}/include
+      - run: vcpkg install zlib botan:x64-windows-static
+      - run: cmake . -DBOOST_ROOT="${BOOST_ROOT_1_72_0}" -DBoost_INCLUDE_DIR="${BOOST_ROOT_1_72_0}/include"
       - run: cmake --build . --target rikerbot_all
       - run: python setup.py bdist_wheel

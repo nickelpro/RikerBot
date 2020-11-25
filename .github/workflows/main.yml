@@ -10,10 +10,10 @@ jobs:
         uses: actions/checkout@v1
       - run: pip install minecraft-data
       - run: sudo apt-get install ninja-build libboost1.71-all-dev libbotan-2-dev
+      - run: cmake . -G Ninja
         env:
           CC: gcc-10
           CXX: g++-10
-      - run: cmake . -G Ninja
       - run: cmake --build . --target rikerbot_all
       - run: python setup.py bdist_wheel
 

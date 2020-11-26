@@ -23,6 +23,7 @@ jobs:
       - name: Clone
         uses: actions/checkout@v1
       - run: pip install minecraft-data
+      - run: choco install swig
       - name: Restore from cache and run vcpkg
         uses: lukka/run-vcpkg@v5
         with:

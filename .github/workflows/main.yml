@@ -23,12 +23,17 @@ jobs:
       - name: Clone
         uses: actions/checkout@v1
       - run: pip install minecraft-data
+        shell: bash
       - run: choco install --yes swig
+        shell: bash
       - name: Restore from cache and run vcpkg
         uses: lukka/run-vcpkg@v5
         with:
           vcpkgArguments: zlib:x64-windows-static botan:x64-windows-static
           vcpkgGitCommitId: ff7113a7c6dcb38a4cbf144052b3691b348ef4da
-      - run: cmake . -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT}\scripts\buildsystems\vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows-static -DBOOST_ROOT="${BOOST_ROOT_1_72_0}" -DBoost_INCLUDE_DIR="${BOOST_ROOT_1_72_0}\include"
+      - run: cmake . -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT\\scripts\\buildsystems\\vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static -DBOOST_ROOT=$BOOST_ROOT_1_72_0 -DBoost_INCLUDE_DIR=$BOOST_ROOT_1_72_0\\include
+        shell: bash
       - run: cmake --build . --target rikerbot_all
+        shell: bash
       - run: python setup.py bdist_wheel
+        shell: bash
